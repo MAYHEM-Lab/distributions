@@ -1,0 +1,4 @@
+distributions
+=============
+
+basic probability distributions
