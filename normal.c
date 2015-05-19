@@ -4,8 +4,10 @@
 #include <stdio.h>
 #include <math.h>
 #include <errno.h>
+#include <sys/time.h>
 
 #define RAND() (drand48())
+#define SEED(s) (srand48(s))
 
 
 double Mu;
@@ -230,6 +232,10 @@ main(int argc, char *argv[])
 	double acc;
 	double incr;
 	double curr;
+	struct timeval tm;
+
+	gettimeofday(&tm,NULL);
+	SEED(tm.tv_sec+tm.tv_usec);
 
 	Mu = 0.0;
 	Sigma = 1.0;
