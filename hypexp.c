@@ -187,6 +187,13 @@ again:
 	    	fprintf(stderr,"specify valid probabilities\n");
 		return(-1);
 	}
+
+	/*
+	 * check to see if we are doing a 2-p
+	 */
+	if(pr2 == 0) {
+		pr2 = 1.0 - pr1;
+	}
 	r1 = RAND();
 	r2 = RAND();
 	if (r1 < pr1)
