@@ -21,9 +21,9 @@ int CDF;
 
 #define PI (3.14159265)
 
-#define Usage "normal -m mu -s sigma -c sample_count -l low -h high [-VC]\n"
+#define Usage "normal -m mu -s sigma -c sample_count -l low -h high [-VCT]\n"
 
-#define ARGS "m:s:c:h:l:VC"
+#define ARGS "m:s:c:h:l:VCT"
 
 /*
  * http://mathworld.wolfram.com/NormalDistribution.html
@@ -269,6 +269,10 @@ main(int argc, char *argv[])
 				break;
 			case 'V':
 				Values = 1;
+				break;
+			case 'T':
+				/* test mode for jenkins */
+				SEED(10);
 				break;
 			default:
 				fprintf(stderr,"unrecognize arg: %c\n",c);
