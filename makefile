@@ -4,13 +4,16 @@ EPATH=../euca-cutils
 
 LIBS=-lm ${EPATH}/libutils.a
 
-all: normal exponential normal.o exponential.o pareto pareto.o hypexp hypexp.o
+all: normal exponential normal.o exponential.o pareto pareto.o hypexp hypexp.o normal-prob
 
 exponential: exponential.c exponential.h
 	${CC} ${CFLAGS} -DSTANDALONE -o exponential exponential.c ${LIBS}
 
 normal: normal.c normal.h
 	${CC} ${CFLAGS} -DSTANDALONE -o normal normal.c ${LIBS}
+
+normal-prob: normal-prob.c normal.h
+	${CC} ${CFLAGS} -o normal-prob normal-prob.c ${LIBS}
 
 pareto: pareto.c pareto.h
 	${CC} ${CFLAGS} -DSTANDALONE -o pareto pareto.c ${LIBS}
