@@ -5,8 +5,6 @@
 
 #define RAND() (drand48())
 
-extern void srand48();
-extern double drand48();
 
 
 double a;
@@ -21,12 +19,6 @@ int CDF;
  * parameters: a, b
  * CDF: 1 - exp((x/a))^b
  */
-
-extern double pow();
-extern double log();
-extern int getopt();
-extern char *optarg;
-
 
 #define Usage "weibull -a a -b b -c sample_count [-V]\n"
 

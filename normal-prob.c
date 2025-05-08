@@ -29,7 +29,7 @@ double NormalCDF(double x, double mu, double sigma)
 	
 
 
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int c;
 	int i;
