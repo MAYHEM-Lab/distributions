@@ -47,9 +47,10 @@ int InvertedPoissonCDF(double lambda) {
 
 double Poisson(unsigned int k, double lambda)
 {
+  int i;
   double p = exp(-lambda);
   double f = 1;
-  for ( int i=0 ; i<k ; i++ ) f *= lambda/(i+1);     
+  for ( i=0 ; i<k ; i++ ) f *= lambda/(i+1);     
   return p*f;
 }
 
