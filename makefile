@@ -4,7 +4,7 @@ EPATH=../euca-cutils
 
 LIBS=-lm ${EPATH}/libutils.a
 
-ALL= normal exponential normal.o exponential.o pareto pareto.o hypexp hypexp.o normal-prob poisson.o poisson
+ALL= normal exponential normal.o exponential.o pareto pareto.o hypexp hypexp.o normal-prob poisson.o poisson uniform
 all: ${ALL}
 
 exponential: exponential.c exponential.h
@@ -18,6 +18,9 @@ normal-prob: normal-prob.c normal.h
 
 pareto: pareto.c pareto.h
 	${CC} ${CFLAGS} -DSTANDALONE -o pareto pareto.c ${LIBS}
+
+uniform: uniform.c 
+	${CC} ${CFLAGS} -DSTANDALONE -o uniform uniform.c ${LIBS}
 
 exponential.o: exponential.c exponential.h
 	${CC} ${CFLAGS} -c exponential.c
