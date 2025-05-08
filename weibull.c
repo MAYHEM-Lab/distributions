@@ -2,8 +2,10 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <math.h>
+#include <sys/time.h>
 
 #define RAND() (drand48())
+#define SEED(x) (srand48(x))
 
 
 
@@ -44,6 +46,10 @@ main(int argc, char *argv[])
 	double acc;
 	double incr;
 	double curr;
+	struct timeval tm;
+
+	gettimeofday(&tm,NULL);
+	SEED(tm.tv_sec+tm.tv_usec);
 
 	a = 1.0;
 	b = 1.0;
