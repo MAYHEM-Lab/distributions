@@ -221,7 +221,7 @@ double InvNormalCondGreater(double r, double a, double mu, double sigma)
 }
 
 #ifdef STANDALONE
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int c;
 	int i;
