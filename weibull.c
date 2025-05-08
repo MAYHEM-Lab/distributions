@@ -26,7 +26,7 @@ int CDF;
 
 double InvertedWeibullCDF(double y, double a, double b)
 {
-	double x = a * pow(-1.0*log(1.0-y),b);
+	double x = a * pow(-1.0*log(1.0-y),-1.0*b);
 	return(x);
 }
 
